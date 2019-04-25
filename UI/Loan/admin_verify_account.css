@@ -1,0 +1,310 @@
+.dashboard__container {
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.topNavbar__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.topNavbar__wrapper__notificationArea {
+    display: flex;
+    align-items: left;
+    position: relative;
+    align-items: right;
+}
+
+.topNavbar__wrapper__notificationArea__anchor {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    align-items: right;
+    color: #FFF;
+}
+
+.topNavbar__wrapper__notificationArea__anchor:first-of-type {
+    margin-right: 1.2rem;
+}
+
+.topNavbar__wrapper__notificationArea__anchor:nth-child(3) {
+    margin: 0;
+}
+.historyWrapper {
+    display: flex;
+    background: rgb(93, 173, 109);
+    margin-bottom: 2rem;
+}
+
+.cardHolder {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.largeCard {
+    background: rgb(32, 82, 67);
+    border-radius: 4px;
+    border: none;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 100%;
+    -webkit-box-shadow: -1px 10px 18px 1px rgba(235, 235, 235, 1);
+    -moz-box-shadow: -1px 10px 18px 1px rgba(235, 235, 235, 1);
+    box-shadow: 0px 15px 17px 0px rgba(235, 235, 235, 0.82);
+    margin-right: 2rem;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.admin-mr {
+    margin-right: 1.5rem;
+}
+
+.admin-hyperlinks {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-right: 2rem;
+    display: inline-block;
+}
+
+.admin-hyperlinks:hover {
+    text-decoration: underline;
+}
+
+.adminTopNavBar {
+    width: 100%;
+    margin-bottom: 8rem;
+}
+
+.radioCheck[type="radio"], .radioCheck2[type="radio"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.radioCheck__label, .radioCheck2__label {
+    padding-left: 2rem;
+}
+
+.radioCheck__label, .radioCheck2__label:hover {
+    cursor: pointer;
+}
+
+.radioCheck2__label {
+    padding-left: 2.5rem;
+}
+
+.radioCheck__label::before, .radioCheck2__label::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 2px solid rgb(51, 82, 219);
+}
+
+.radioCheck2__label::before {
+    margin-left: 1rem;
+}
+
+.radioCheck__label::after, .radioCheck2__label::after {
+    content: "";
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background: rgb(30, 216, 46);
+}
+
+.radioCheck__label::before, .radioCheck__label::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.radioCheck2__label::before, .radioCheck2__label::after {
+    position: absolute;
+    top: -1px;
+    left: 90px;
+}
+
+.radioCheck__label::after {
+    left: 5px;
+    top: 4px;
+}
+
+.radioCheck2__label::after {
+    top: 3px;
+    left: 111px;
+}
+
+.radioCheck[type="radio"]+.radioCheck__label::after, .radioCheck2[type="radio"]+.radioCheck2__label::after {
+    content: none;
+}
+
+.radioCheck[type="radio"]:checked+.radioCheck__label::after, .radioCheck2[type="radio"]:checked+.radioCheck2__label::after {
+    content: "";
+}
+
+.pendingLabel::before, .rejectLabel:before {
+    top: -1px;
+    left: -16px;
+}
+
+.pendingLabel::after, .rejectLabel:after {
+    left: 5px;
+}
+
+.verifySection {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.verifyWrapper {
+    margin: 0 2rem;
+    margin-top: 4rem;
+    width: 35%;
+}
+
+.verificationText {
+    border-right: 0;
+    margin-top: -16px;
+    margin-left: 2rem;
+    width: 100%;
+}
+
+.radioBtnWrapper {
+    position: relative;
+    margin-top: 0.8rem;
+    line-height: initial;
+}
+
+.verificationListWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter {
+    padding: 0.5rem;
+    font-family: 'Rubik', sans-serif;
+}
+.greenBold, .greyBold, .redBold {
+    font-weight: bold;
+}
+
+.greenBold {
+    color: #03CB4E; 
+}
+
+.greyBold {
+    color: grey; 
+}
+
+.redBold {
+    color: rgb(255, 8, 8); 
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+.lineHeightInitial {
+    line-height: initial;
+}
+
+.removeUnderline {
+    text-decoration: none;
+}
+
+.fullyBold {
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .textAlignLeft {
+        text-align: left;
+    }
+
+    .whiteSpace {
+        padding-left: 0; 
+        padding-right: 0;
+    }
+
+    .verifyWrapper {
+        width: 100%;
+    }
+
+    .verificationText {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .verifyWrapper:first-child {
+        margin-top: 0;
+    }
+
+    .numbering {
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .verifyColumn {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    
+    }
+}
+
+@media (min-width: 769px) {
+    .verificationText {
+        margin-top: -16px;
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    .topNavbar__wrapper__notificationArea__anchor:first-of-type, .admin-mr  {
+        margin-right: 0
+    } 
+    
+    .topNavbar__wrapper__notificationArea__anchor:nth-child(3) {
+        margin-right: 1.5rem;
+    } 
+
+}
+
+@media (max-width: 508px) {
+    .adminTopNavBar {
+        display: flex;
+        text-align: center;
+    }
+    
+    .admin-hyperlinks {
+        margin: 0 0.8rem;
+    }
+}
+@media (max-width: 426px) {
+    .verifyColumn {
+        width: 60%;
+    }
+}
+
+@media (min-width: 426px ) and (max-width: 768px) {
+    .verifyColumn {
+        width: 45%;
+    }
+}
+
+@media (max-width: 320px) {
+    .admin-hyperlinks {
+        margin: 0 0.4rem;
+        font-size: 0.9rem;
+    }
+}
