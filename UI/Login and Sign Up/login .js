@@ -1,5 +1,7 @@
-var email = document.getElementById(email).value;
-var user = document.getElementById(user).value;
-var name = email + " " + user;
+var loginbtn = document.getElementById("loginbtn")
+loginbtn.oneclick = function(){
 
-var pass1 = document.getElementById(pass1).value;
+var Username = document.getElementById(Username).value;
+var Password = document.getElementById(Password).value;
+
+}

@@ -1,27 +1,27 @@
-var amount = document.getElementById(amount).value;
-var income = document.getElementById(income).value;
+const amount = document.getElementById(amount).value;
+const income = document.getElementById(income).value;
 
 
-var purpose = document.getElementById(Purpose_of_loan).value;
-var value = purpose.options[purpose.selectIndex].value;
+const purpose = document.getElementById(Purpose_of_loan).value;
+const value = purpose.options[purpose.selectIndex].value;
 
-var gender = document.getElementById(Gender_of_Applicant).value;
-var value = gender.options[gender.selectIndex].value;
+const gender = document.getElementById(Gender_of_Applicant).value;
+const value = gender.options[gender.selectIndex].value;
 
-var first= document.getElementById(first).value;
-var middle = document.getElementById(middle).value;
-var last = document.getElementById(last).value;
-var name = first + " " + middle + " " + last
+const first= document.getElementById(first).value;
+const middle = document.getElementById(middle).value;
+const last = document.getElementById(last).value;
+const name = first + " " + middle + " " + last
 
-var birthday = document.getElementById(birthday).value;
-var birthmonth = document.getElementById(birthmonth).value;
-var birthyear = document.getElementById(birthyear).value;
-var DOB = birthday + " " + birthmonth + " " + birthyear
+const birthday = document.getElementById(birthday).value;
+const birthmonth = document.getElementById(birthmonth).value;
+const birthyear = document.getElementById(birthyear).value;
+const DOB = birthday + " " + birthmonth + " " + birthyear
 
 
-var country = document.getElementById(country).value;
-var value = country.options[country.selectIndex].value;
+const country = document.getElementById(country).value;
+const value = country.options[country.selectIndex].value;
 
-var National_ID_number = document.getElementById(num1).value;
+const National_ID_number = document.getElementById(num1).value;
 
-var email = document.getElementById(email).value;
+const email = document.getElementById(email).value;
