@@ -33,8 +33,8 @@ class ValidateUser {
       error = 'You need to include a valid first name';
     } else if (!lastName || !validate.name.test(lastName)) {
       error = 'You need to include a valid last name';
-    } else if (!address) {
-      error = 'You need to include a valid address';
+    } else if (!nickname) {
+      error = 'You need to include a address';
     } else if (!email || !validate.email.test(email)) {
       error = 'You need to include a valid email address';
     } else if (!password) {
