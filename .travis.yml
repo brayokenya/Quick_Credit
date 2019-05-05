@@ -1,19 +1,18 @@
- - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-  - ./cc-test-reporter before-build
-  - NODE_ENV=staging npm run resetDB
-  - NODE_ENV=staging npm run seedDB
-script:
-script:
-  - npm test
-  - npm test
-after_success:
+ language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+# blocklist
+branches:
+  except:
+  - lmaster 
+before_script:
+  - npm install
+script: 
+  - npm run test
 after_success:
   - npm run coverage
-  - npm run coverage
-after_script:
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - npm run report-coverage
+- npm run coveralls
