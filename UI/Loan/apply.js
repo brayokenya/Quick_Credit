@@ -23,5 +23,7 @@ const country = document.getElementById(country).value;
 const value = country.options[country.selectIndex].value;
 
 const National_ID_number = document.getElementById(num1).value;
+const Home_Address= document.getElementById(num2).value;
+
 
 const email = document.getElementById(email).value;
