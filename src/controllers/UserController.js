@@ -23,7 +23,6 @@ class UserController {
       id,
       firstName,
       lastName,
-      nickname,
       address,
       email,
       password,
