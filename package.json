@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node src/app.js",
     "start:dev": "nodemon --exec babel-node src/app.js",
-    "test": "mocha --require @babel/register --timeout 120000 --require @babel/polyfill ./test --exit",
+    "test": "mocha --require @babel/register --timeout 120000 --require @babel/polyfill ./tests --exit",
     "build": "babel --presets es2015 -d lib/ src"
   },
   "repository": {
