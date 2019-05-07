@@ -122,20 +122,7 @@ describe('routes: /auth', () => {
         });
     });
 
-    /*specify('error when user signs up with empty email', (done) => {
-      userData.email = '';
-      chai
-        .request(app)
-        .post('/api/v1/auth/signup')
-        .send(userData)
-        .end((err, res) => {
-          expect(res).to.have.status(400);
-          expect(res.body.status).to.be.equal(400);
-          expect(res.body).to.have.property('error');
-          done(err);
-        });*/
-  
-    specify('error when user signs up with empty nickname', (done) => {
+    specify('error when user signs up with empty email', (done) => {
       userData.email = '';
       chai
         .request(app)
