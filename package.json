@@ -1,7 +1,7 @@
 {
   "name": "andela",
   "version": "1.0.0",
-  "description": "",
+  "description": "<a href=\"https://codeclimate.com/github/brayokenya/Quick_Credit/maintainability\"><img src=\"https://api.codeclimate.com/v1/badges/15f31ec3548a640ffcad/maintainability\" /></a> <a href=\"https://codeclimate.com/github/brayokenya/Quick_Credit/test_coverage\"><img src=\"https://api.codeclimate.com/v1/badges/15f31ec3548a640ffcad/test_coverage\" /></a> [![Build Status](https://travis-ci.org/brayokenya/Quick_Credit.svg?branch=master&service=github)](https://travis-ci.org/brayokenya/Quick_Credit)",
   "main": "src/app.js",
   "scripts": {
     "start": "babel-node src/app.js",
@@ -22,14 +22,11 @@
   },
   "homepage": "https://github.com/brayokenya/Quick_Credit#readme",
   "dependencies": {
-    "express": "^4.16.4",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "dotenv": "^7.0.0",
-    "joi": "^14.3.1",
-    "jsonwebtoken": "^8.5.1",
     "coveralls": "^3.0.3",
+    "dotenv": "^7.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.1",
@@ -38,6 +35,7 @@
     "grunt": "^1.0.4",
     "istanbul": "^0.4.5",
     "jasmine-node": "^2.0.1",
+    "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
     "method": "^2.0.0",
     "methods": "^1.1.2",
@@ -63,5 +61,8 @@
     "chai": "^4.2.0",
     "chai-http": "^4.2.1"
   },
-  "keywords": []
+  "keywords": [],
+  "directories": {
+    "test": "tests"
+  }
 }
