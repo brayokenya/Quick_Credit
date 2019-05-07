@@ -116,8 +116,8 @@ describe('routes: /auth', () => {
           expect(res).to.have.status(400);
           expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.property('error');
-          // console.log(res.body.error);
-          // expect(res.body.error).to.equal('You need to include a valid address');
+          console.log(res.body.error);
+          expect(res.body.error).to.equal('You need to include a valid address');
           done(err);
         });
     });
