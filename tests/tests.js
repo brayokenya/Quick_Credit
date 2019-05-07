@@ -134,7 +134,7 @@ describe('routes: /auth', () => {
           expect(res.body).to.have.property('error');
           done(err);
         });*/
-    });
+  
     specify('error when user signs up with empty nickname', (done) => {
       userData.email = '';
       chai
