@@ -44,7 +44,7 @@ describe('routes: /auth', () => {
   context('POST /auth/signup', () => {
     const userData = {
       firstName: 'Robert',
-      lastName: 'Ndirangu Ndegwa',
+      lastName: 'Ndirangu',
       address: 'HSe Number 25 Mutha Street, Embu, Kenya',
       email: 'robakadi@gmail.com',
       password: 'secret',
