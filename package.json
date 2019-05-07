@@ -2,7 +2,7 @@
   "name": "andela",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "babel-node src/app.js",
     "start:dev": "nodemon --exec babel-node src/app.js",
