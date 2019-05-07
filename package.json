@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests"
+    "test": "mocha ./tests",
+    "build": "babel --presets es2015 -d lib/ src"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   },
   "keywords": []
 }
