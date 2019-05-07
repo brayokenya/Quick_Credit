@@ -113,7 +113,6 @@ describe('routes: /auth', () => {
         .post('/api/v1/auth/signup')
         .send(userData)
         .end((err, res) => {
-        console.log(res)
           expect(res).to.have.status(400);
           expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.property('error');
