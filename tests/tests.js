@@ -43,7 +43,7 @@ describe('GET /, /404, /api/v1', () => {
 describe('routes: /auth', () => {
   context('POST /auth/signup', () => {
     const userData = {
-      firstName: 'Robert ',
+      firstName: 'Robert',
       lastName: 'Ndirangu Ndegwa',
       address: 'HSe Number 25 Mutha Street, Embu, Kenya',
       email: 'robakadi@gmail.com',
