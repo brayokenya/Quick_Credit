@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests",
+    "start": "babel-node src/app.js",
+    "start:dev": "nodemon --exec babel-node src/app.js",
+    "test": "mocha --require @babel/register --timeout 120000 --require @babel/polyfill ./test --exit",
     "build": "babel --presets es2015 -d lib/ src"
   },
   "repository": {
@@ -22,8 +24,12 @@
   },
   "devDependencies": {
     "mocha": "^6.1.4",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0"
   },
   "keywords": []
 }
