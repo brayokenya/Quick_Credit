@@ -1,13 +1,11 @@
 language: node_js
 node_js:
   - "stable"
+notifications:
+  email: false
 cache:
   directories:
     - node_modules
-# blocklist
-branches:
-  except:
-  - lmaster 
 before_script:
   - npm install
 script: 
@@ -16,4 +14,3 @@ after_success:
   - npm run coverage
   - npm run report-coverage
   - npm run coveralls
-
