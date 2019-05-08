@@ -63,17 +63,17 @@ describe('routes: /auth', () => {
         });
     });
 
-    specify('error for already existing user with email', (done) => {
+    specify.skip('error for already existing user with email', (done) => {
       chai
         .request(app)
         .post('/api/v1/auth/signup')
         .send(userData)
-        /*.end((err, res) => {
+        .end((err, res) => {
           expect(res).to.have.status(409);
           expect(res.body.status).to.be.equal(409);
           expect(res.body.data).to.have.property('error');
           done(err);
-        });*/
+        });
     });
 
     specify('error when user signs up with empty last name', (done) => {
@@ -106,7 +106,7 @@ describe('routes: /auth', () => {
         });
     });
     
-   specify('error when user signs up with empty address', (done) => {
+    specify('error when user signs up with empty address', (done) => {
       userData.address = '';
       chai
         .request(app)
@@ -116,13 +116,26 @@ describe('routes: /auth', () => {
           expect(res).to.have.status(400);
           expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.property('error');
-          //console.log(res.body.error);
+          console.log(res.body.error);
           expect(res.body.error).to.equal('You need to include a valid address');
           done(err);
         });
     });
 
     specify('error when user signs up with empty email', (done) => {
+      userData.email = '';
+      chai
+        .request(app)
+        .post('/api/v1/auth/signup')
+        .send(userData)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
+          expect(res.body).to.have.property('error');
+          done(err);
+        });
+  
+    specify('error when user signs up with empty nickname', (done) => {
       userData.email = '';
       chai
         .request(app)
@@ -157,12 +170,12 @@ describe('routes: /auth', () => {
         .request(app)
         .post('/api/v1/auth/signin')
         .send({
-          email: 'kiirubrian21@gmail.com',
-          password: 'Qazwsxedcrfv123',
+          email: 'meetdesmond.edem@gmail.com',
+          password: 'admin',
         })
         .end((err, res) => {
-          expect(res).to.have.status(404);
-          expect(res.body.status).to.be.equal(404);
+          expect(res).to.have.status(200);
+          expect(res.body.status).to.be.equal(200);
           expect(res.body.data).to.have.property('token');
           done(err);
         });
@@ -174,8 +187,8 @@ describe('routes: /auth', () => {
         .post('/api/v1/auth/signin')
         .send({ email: '', password: '1234345' })
         .end((err, res) => {
-          expect(res).to.have.status(200);
-          expect(res.body.status).to.be.equal(200);
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.property('error');
           done(err);
         });
@@ -185,7 +198,7 @@ describe('routes: /auth', () => {
       chai
         .request(app)
         .post('/api/v1/auth/signin')
-        .send({ email: 'kiirubrian21@gmail.com', password: '' })
+        .send({ email: 'meetdesmond.edem@gmail.com', password: '' })
         .end((err, res) => {
           expect(res).to.have.status(400);
           expect(res.body.status).to.be.equal(400);
