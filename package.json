@@ -64,7 +64,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "nyc --reporter=html --reporter=text mocha  --timeout 120000 ./test --exit",
+    "test": "nyc --reporter=html --reporter=text mocha  --timeout 120000 ./tests --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "showcoverage": "start ./coverage/index.html"
