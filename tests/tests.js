@@ -106,7 +106,7 @@ describe('routes: /auth', () => {
         });
     });
     
-   specify.skip('error when user signs up with empty address', (done) => {
+   /* specify('error when user signs up with empty address', (done) => {
       userData.address = '';
       chai
         .request(app)
@@ -120,7 +120,7 @@ describe('routes: /auth', () => {
           expect(res.body.error).to.equal('You need to include a valid address');
           done(err);
         });
-    });
+    });*/
 
     specify('error when user signs up with empty email', (done) => {
       userData.email = '';
@@ -157,12 +157,12 @@ describe('routes: /auth', () => {
         .request(app)
         .post('/api/v1/auth/signin')
         .send({
-          email: 'Kiirubrian21@gmail.com',
-          password: 'Qazwsxedcrfv1234',
+          email: 'meetdesmond.edem@gmail.com',
+          password: 'admin',
         })
         .end((err, res) => {
-          expect(res).to.have.status(404);
-          expect(res.body.status).to.be.equal(404);
+          expect(res).to.have.status(200);
+          expect(res.body.status).to.be.equal(200);
           expect(res.body.data).to.have.property('token');
           done(err);
         });
@@ -173,13 +173,12 @@ describe('routes: /auth', () => {
         .request(app)
         .post('/api/v1/auth/signin')
         .send({ email: '', password: '1234345' })
-        then((res) => {
-          expect(res.status).to.be.equal(404);
-          expect(res.body).to.be.an('object');
-          expect(res.body).to.have.property('status');
-          done();
-        })
-  .catch(error => done(error));
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
+          expect(res.body).to.have.property('error');
+          done(err);
+        });
     });
 
     specify('error if password is not provided', (done) => {
