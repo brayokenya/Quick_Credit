@@ -8,11 +8,6 @@ const value = purpose.options[purpose.selectIndex].value;
 const gender = document.getElementById(Gender_of_Applicant).value;
 const value = gender.options[gender.selectIndex].value;
 
-const first= document.getElementById(first).value;
-const middle = document.getElementById(middle).value;
-const last = document.getElementById(last).value;
-const name = first + " " + middle + " " + last
-
 const birthday = document.getElementById(birthday).value;
 const birthmonth = document.getElementById(birthmonth).value;
 const birthyear = document.getElementById(birthyear).value;
