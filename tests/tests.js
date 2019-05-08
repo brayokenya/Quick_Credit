@@ -157,8 +157,8 @@ describe('routes: /auth', () => {
         .request(app)
         .post('/api/v1/auth/signin')
         .send({
-          email: 'meetdesmond.edem@gmail.com',
-          password: 'admin',
+          email: 'Kiirubrian21@gmail.com',
+          password: 'Qazwsxedcrfv1234',
         })
         .end((err, res) => {
           expect(res).to.have.status(200);

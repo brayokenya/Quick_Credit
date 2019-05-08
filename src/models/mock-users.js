@@ -6,7 +6,7 @@ const userDB = [
     address: 'Mama Ngina Street HSe 24',
     email: 'Kiirubrian21@gmail.com',
     password: 'Qazwsxedcrfv1234',
-    status: 'verified',
+    status: 'unverified',
     isAdmin: false,
   },
   {
