@@ -161,8 +161,8 @@ describe('routes: /auth', () => {
           password: 'admin',
         })
         .end((err, res) => {
-          expect(res).to.have.status(200);
-          expect(res.body.status).to.be.equal(200);
+          expect(res).to.have.status(404);
+          expect(res.body.status).to.be.equal(404);
           expect(res.body.data).to.have.property('token');
           done(err);
         });
