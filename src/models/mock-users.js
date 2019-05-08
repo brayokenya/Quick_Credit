@@ -21,14 +21,13 @@ const userDB = [
   },
   {
     id: 3,
-
     firstName: 'Robert',
     lastName: 'Ndirangu',
     address: 'HSe Number 25 Mutha Street, Embu, Kenya',
     email: 'robakadi@gmail.com',
     password: 'QAZwsxedcrfv254',
     status: 'verified',
-    isAdmin:false,
+    isAdmin: false,
     
   },
   {
