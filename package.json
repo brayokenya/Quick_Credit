@@ -66,5 +66,6 @@
   "keywords": [],
   "directories": {
     "test": "tests"
+  
   }
 }
