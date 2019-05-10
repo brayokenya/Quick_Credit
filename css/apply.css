@@ -1,0 +1,40 @@
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=number], input[type=text] {
+  padding: 15px 20px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 1px solid black;
+  margin: 10px;
+  border: 1px solid #4CAF50;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #f1f1f1;
+}
+
+#title {
+    /* 	text-align: center; */
+  color: white;
+  font-size: 2rem;
+  text-shadow:4px 1px black;
+    }
+.form-header {
+  padding: 20px 40px;
+  background: green;
+  background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
+    } 
+
+input[type=number]:focus, input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+      }
+/* Extra styles for the submit button */
+.submitbtn {
+  padding: 14px 20px;
+  background-color: green;
+  }
+        
+  .body {
+    background-image: url("Desktop/Andela/img/andela sign up.jpg");
+  }
