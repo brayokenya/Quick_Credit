@@ -8,23 +8,23 @@ const {
 } = require('../helper/validate');
 
 const login = {
-  email: 'elemanhillary@gmail.com',
+  email: 'kiirubrian21@gmail.com',
   pin: '123456',
 };
 
 const loan = {
-  usermail: 'elemanhillary@gmail.com',
+  usermail: 'kiirubrian21@gmail.com',
   loanType: 'Auto Loan',
   tenor: 12,
   amount: 3000,
 };
 
 const user = {
-  firstname: 'eleman',
-  lastname: 'hillary',
-  email: 'elemanhillary@gmail.com',
-  workAddress: 'kampala',
-  homeAddress: 'kampala',
+  firstname: 'Brian',
+  lastname: 'kiiru',
+  email: 'kiirubrian21@gmail.com',
+  workAddress: 'Mama Ngina Street Hse no.24',
+  homeAddress: 'Embu,Kenya',
   pin: '123456',
 };
 
