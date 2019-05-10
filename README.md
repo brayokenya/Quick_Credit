@@ -83,15 +83,21 @@ API-ENDPOINTS
 Pivotal Tracker stories
 
 https://www.pivotaltracker.com/n/projects/2326521
-Template UI
 
+
+Template UI
 You can see a hosted version of the template at  https://brayokenya.github.io/Quick_Credit/
+
 API
 
 The API is currently in version 1 (v1) and is hosted at https://hidden-headland-23309.herokuapp.com/
 
+
+
 API Documentation
 Documentation of this API is on branch develop
+
+
 Author
 
 Kimani Brian Kiiru...
