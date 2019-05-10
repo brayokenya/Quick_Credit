@@ -40,9 +40,12 @@ To install and run this project you would need to have listed stack installed:
 
     Make sure to run admin and user in different browsers
 
-git clone <https://github.com/brayokenya/Quick_Credit.git>
+git clone ==> <https://github.com/brayokenya/Quick_Credit.git>
+
 cd QuickCredit
+
 npm install
+
 npm start
 
 Testing
