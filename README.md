@@ -95,7 +95,7 @@ The API is currently in version 1 (v1) and is hosted at https://hidden-headland-
 
 
 API Documentation
-Documentation of this API is on branch develop
+Documentation of this API is on branch deploy
 
 
 Author
