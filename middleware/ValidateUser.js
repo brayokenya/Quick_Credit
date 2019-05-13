@@ -63,7 +63,11 @@ class ValidateUser {
     const userID = userDB.findIndex(user => user.email === email);
     if (!email || !validate.email.test(email)) {
       error = 'Email provided is invalid';
-    } else if (!password) {
+     const userID = userDb.findIndex(user => user.password === password);
+      if (!password || !validate.password.test(password)) {
+      error = 'Password provided is incorrect';
+      }
+      else if (!password) {
       error = 'Provide password to continue';
     }
 
