@@ -1,8 +1,9 @@
 * {box-sizing: border-box}
 
 /* Full-width input fields */
-  input[type=number], input[type=text] {
-  padding: 15px 20px;
+  /* Full-width input fields */
+input[type=text], input[type=password] {
+  padding: 20px 120px;
   margin: 5px 0 22px 0;
   display: inline-block;
   border: 1px solid black;
@@ -16,21 +17,35 @@
 #title {
     /* 	text-align: center; */
   color: white;
+  margin: auto;
+  width: 50%;
   font-size: 2rem;
   text-shadow:4px 1px black;
     }
+
+#description {
+  color:white;
+  margin: auto;
+  width: 50%;
+  }
+
+#sign {
+margin: auto;
+width: 500%;
+
+}
 .form-header {
   padding: 20px 40px;
   background: green;
   background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
-    } 
-
+  
+}
 input[type=number]:focus, input[type=text]:focus {
   background-color: #ddd;
   outline: none;
       }
 /* Extra styles for the submit button */
-.submitbtn {
+.signupbtn {
   padding: 14px 20px;
   background-color: green;
   }
