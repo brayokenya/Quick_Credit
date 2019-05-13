@@ -19,6 +19,10 @@
     font-size: 2rem;
     text-shadow:4px 1px black;
   }
+
+  #description {
+    color:white;
+}
   .form-header {
     padding: 20px 40px;
     background: green;
