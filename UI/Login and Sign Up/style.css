@@ -79,6 +79,8 @@ button:hover {
 @media screen and (max-width: 300px) {
 .signupbtn {
     width: 100%;
+    padding: 14px 20px;
+    background-color: green;
   }
 }
 
