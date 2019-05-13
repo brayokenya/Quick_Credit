@@ -61,6 +61,8 @@ button:hover {
 .signupbtn {
   float: left;
   width: 50%;
+  padding: 14px 20px
+  backgroud-color: green;
 }
 
 /* Add padding to container elements */
