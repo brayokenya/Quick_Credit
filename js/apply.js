@@ -25,3 +25,6 @@ const value = country.options[country.selectIndex].value;
 const National_ID_number = document.getElementById(num1).value;
 
 const email = document.getElementById(email).value;
+fetch('endpoint',{
+    body: new URLSearchParams(new FormData(form))
+  })
