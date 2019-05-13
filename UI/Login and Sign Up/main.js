@@ -16,8 +16,10 @@ const user = document.getElementById(user).value;
 
 const pass1 = document.getElementById(pass1).value;
 const pass2 = document.getElementById(pass2).value;
-
-
+const form = document.querySelector('form');
+fetch('endpoint',{
+  body: new URLSearchParams(new FormData(form))
+})
 const pass =""
 
 if (pass1 === pass2) {
