@@ -20,18 +20,14 @@
     text-shadow:4px 1px black;
   }
 
-  #description {
+#description {
     color:white;
 }
-#login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-}
-
-  .form-header {
+.form-header {
     padding: 20px 40px;
+    width: 800px;
+    margin: auto;
     background: green;
     background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
   }  
