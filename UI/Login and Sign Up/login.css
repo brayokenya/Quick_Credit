@@ -24,11 +24,10 @@
     color:white;
 }
 #login {
-  left: 50%;
-  top: 50%;
-  margin-left: -25%;
-  position: absolute;
-  margin-top: -25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
   .form-header {
