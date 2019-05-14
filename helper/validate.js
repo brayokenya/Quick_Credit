@@ -5,8 +5,7 @@ const { newApplication } = require('../helper/util');
 
 let data;
 
-/**
- *
+/*
  * @params {res} object
  * @params {args} array
  *
@@ -24,8 +23,7 @@ const loanTypeAndLoanAmountChecker = (res, ...args) => {
   }
 };
 
-/**
- *
+/*
  * @param {user} object
  */
 const validateSignUp = (user) => {
@@ -55,8 +53,7 @@ const validateLogin = (details) => {
   return Joi.validate(details, schema);
 };
 
-/**
- *
+/*
  * @param {user} object
  */
 const validateLoan = (loan) => {
@@ -69,8 +66,7 @@ const validateLoan = (loan) => {
   return Joi.validate(loan, schema);
 };
 
-/**
- *
+/*
  * @param {user} object
  */
 const loanApproveValidate = (user) => {
@@ -80,8 +76,7 @@ const loanApproveValidate = (user) => {
   return Joi.validate(user, schema);
 };
 
-/**
- *
+/*
  * @param {user} object
  */
 const amountValidate = (user) => {
