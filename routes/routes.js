@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
  */
 router.post(
   '/auth/signup',
-  // ValidateUser.validateLoginDetails,
   ValidateUser.validateProfileDetails,
   AuthenticateUser.generateToken,
   UserController.createUser,
@@ -25,8 +24,4 @@ router.post(
   AuthenticateUser.generateToken,
   UserController.loginUser,
 );
-
-
-
-
 export default router;
