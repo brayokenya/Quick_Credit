@@ -1,7 +1,7 @@
 * {box-sizing: border-box}
 
 /* Full-width input fields */
-  input[type=number], input[type=text] {
+input[type=number], input[type=text] {
   padding: 15px 20px;
   margin: 5px 0 22px 0;
   display: inline-block;
@@ -14,11 +14,14 @@
 }
 
 #title {
-    /* 	text-align: center; */
-  color: white;
-  font-size: 2rem;
-  text-shadow:4px 1px black;
-    }
+  /* 	text-align: center; */
+color: white;
+margin: auto;
+width: 50%;
+font-size: 2rem;
+text-shadow:4px 1px black;
+}
+
 .form-header {
   padding: 20px 40px;
   background: green;

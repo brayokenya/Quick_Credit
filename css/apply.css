@@ -38,8 +38,8 @@ width: 500%;
   padding: 20px 40px;
   background: green;
   background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
-  
-}
+}  
+
 input[type=number]:focus, input[type=text]:focus {
   background-color: #ddd;
   outline: none;
@@ -49,7 +49,4 @@ input[type=number]:focus, input[type=text]:focus {
   padding: 14px 20px;
   background-color: green;
   }
-        
-  /*.body {
-    background-image: url("Desktop/Andela/img/andela sign up.jpg");
-  }*/
+
