@@ -36,6 +36,11 @@
   width: 40%;
 }
 
+.button_link {
+  background-color: green !important;
+  padding: 15px 40px;
+}
+
 .form-header {
     padding: 20px 40px;
     background: green;

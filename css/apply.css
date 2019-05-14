@@ -14,6 +14,11 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
+form:nth-of-type(1) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 #title {
     /* 	text-align: center; */
   color: white;
@@ -28,7 +33,11 @@ input[type=text], input[type=password] {
   margin: auto;
   width: 50%;
   }
+#apply {
+  margin: auto;
+    width: 40%;
 
+}
 #sign {
 margin: auto;
 width: 500%;
@@ -36,6 +45,7 @@ width: 500%;
 }
 .form-header {
   padding: 20px 40px;
+  margin: auto;
   background: green;
   background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
 }  
