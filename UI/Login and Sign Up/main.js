@@ -2,8 +2,6 @@ const first = document.getElementById(first).value;
 const last = document.getElementById(last).value;
 const name = first + " " + last;
 
-const nick = document.getElementById(nick).value;
-
 const birthday = document.getElementById(birthday).value;
 const birthmonth = document.getElementById(birthmonth).value;
 const birthyear = document.getElementById(birthyear).value;
@@ -11,6 +9,7 @@ const DOB = birthday + " " + birthmonth + " " + birthyear
 
 const National_ID_number = document.getElementById(number).value;
 const email = document.getElementById(email).value;
+const pin = document.getElementById(pin).value;
 
 const user = document.getElementById(user).value;
 
