@@ -33,6 +33,10 @@ form:nth-of-type(1) {
   margin: auto;
   width: 50%;
   }
+#fheader {
+  margin: auto;
+  width: 30%;
+}
 #apply {
   margin: auto;
     width: 40%;
@@ -49,6 +53,11 @@ width: 500%;
   background: green;
   background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
 }  
+.clearfix {
+margin: auto;
+width: 10%;
+}
+
 
 input[type=number]:focus, input[type=text]:focus {
   background-color: #ddd;
