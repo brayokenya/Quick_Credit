@@ -6,7 +6,7 @@ class LinkedList {
     this.head = null;
   }
 
-  /* inserts info into our NodeUser(table user) */
+  /* the following code inserts info into our NodeUser */
   insertUser(...args) {
     /* using arguments to make it neutral to any amount of arguments */
     const newNode = new NodeUser(...args, this.head);
