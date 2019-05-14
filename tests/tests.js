@@ -47,6 +47,7 @@ describe('routes: /auth', () => {
       lastName: 'Ndirangu',
       address: 'HSe Number 25 Mutha Street, Embu, Kenya',
       email: 'robakadi@gmail.com',
+      pin:'54321'
       password: 'QAZwsxedcrfv254',
     };
 
@@ -199,7 +200,7 @@ describe('routes: /auth', () => {
       chai
         .request(app)
         .post('/api/v1/auth/signin')
-        .send({ email: 'meetdesmond.edem@gmail.com', password: '' })
+        .send({ email: 'robakadi@gmail.com', password: '' })
         .end((err, res) => {
           expect(res).to.have.status(400);
           expect(res.body.status).to.be.equal(400);
