@@ -1,0 +1,2032 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "QuickCredit",
+    "description": "A collection on quickcredit node express API",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api/v1",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/auth/signup": {
+      "post": {
+        "summary": "USER SIGNUP",
+        "description": "Create new user by passing in (firstname, lastname, email, homeAddress, workAddress, pin), content-type should be (x-www-form-urlencoded)",
+        "operationId": "UserSignup",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "AWS4-HMAC-SHA256 Credential=/20190423/us-east-1/execute-api/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date, Signature=48ccf42a725b43957e6c82fd5665d3bf4eba9131cbe54a00b812782ef08a4794"
+            }
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "localhost:3000"
+            }
+          },
+          {
+            "name": "Content-Length",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": 111
+            }
+          },
+          {
+            "name": "X-Amz-Date",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "20190423T192106Z"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "firstname",
+                  "lastname",
+                  "email",
+                  "homeAddress",
+                  "workAddress",
+                  "pin"
+                ],
+                "type": "object",
+                "properties": {
+                  "firstname": {
+                    "type": "string",
+                    "example": "Brian"
+                  },
+                  "lastname": {
+                    "type": "string",
+                    "example": "kiiru"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "kiirukiiru21@gmail.com"
+                  },
+                  "homeAddress": {
+                    "type": "string",
+                    "example": "Mama Ngina Street Hse No.24"
+                  },
+                  "workAddress": {
+                    "type": "string",
+                    "example": "Embu, Kenya"
+                  },
+                  "pin": {
+                    "type": "string",
+                    "example": 123456
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 508
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 14:38:11 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"1fc-r3arieCovA5SNJ6jZ58oIrzwOqQ\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/USERSIGNUPResponse"
+                },
+                "example": {
+                  "status": 201,
+                  "Created": true,
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZWxlbWFuaGlsbGFyeUBnbWFpbC5jb20iLCJpYXQiOjE1NTY1NDg2OTIsImV4cCI6MTU1NjYzNTA5Mn0.RcquezmL3vOeFAHH1LT_V6X3sX5wiE6Q4vnRBCBV-9I",
+                  "data": {
+                    "id": 1,
+                    "firstname": "Brian",
+                    "lastname": "kiiru",
+                    "email": "kiirubrian21@gmail.com",
+                    "homeaddress": "Mama Ngina Street Hse No.24",
+                    "workaddress": "Embu,kenya",
+                    "password": "Qazwsxedcrfv1234",
+                    "status": "unverified",
+                    "isAdmin": false,
+                    "createdOn": "Mon, 29 Apr 2019 14:38:12 GMT"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/auth/signin": {
+      "post": {
+        "summary": "USER SIGIN",
+        "description": "Sign in a a valid user by passing valid credentials into the request body, content-type should be (x-www-form-urlencoded).",
+        "operationId": "UserSigin",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "email",
+                  "pin"
+                ],
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "kiirubrian21@gmail.com"
+                  },
+                  "pin": {
+                    "type": "string",
+                    "example": 123456
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 508
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 14:43:42 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"1fc-ZHVKBewyQv7zjhLFZ3uaPAJyoBA\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/USERSIGINResponse"
+                },
+                "example": {
+                  "status": 200,
+                  "Success": true,
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZWxlbWFuaGlsbGFyeUBnbWFpbC5jb20iLCJpYXQiOjE1NTY1NDkwMjMsImV4cCI6MTU1NjYzNTQyM30.UNlqRWMfepudZmrS43F_MYmdXrMFbVJrHrP8Sw4M-eM",
+                  "data": {
+                    "id": 1,
+                    "firstname": "Brian",
+                    "lastname": "kiiru",
+                    "email": "kiirubrian21@gmail.com",
+                    "homeaddress": "Mama Ngina Street Hse No.24i",
+                    "workaddress": "Embu, Kenya",
+                    "password": "Qazwsxedcrfv1234",
+                    "status": "unverified",
+                    "isAdmin": false,
+                    "createdOn": "Mon, 29 Apr 2019 14:38:12 GMT"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/loans": {
+      "post": {
+        "summary": "CREATE LOAN APPLICATION",
+        "description": "Create loan application, user(email) is obtained from the authorization header value(token) by decodeing the header value. Pass Tenor(Interger <= 12) and Loan amount(Float <= Loan Type maximum amount)",
+        "operationId": "CreateLoanApplication",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZWxlbWFuaGlsbGFyeUBnbWFpbC5jb20iLCJpYXQiOjE1NTY1NDg2OTIsImV4cCI6MTU1NjYzNTA5Mn0.RcquezmL3vOeFAHH1LT_V6X3sX5wiE6Q4vnRBCBV-9I"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "loanType",
+                  "tenor",
+                  "amount"
+                ],
+                "type": "object",
+                "properties": {
+                  "loanType": {
+                    "type": "string",
+                    "example": "Auto Loan"
+                  },
+                  "tenor": {
+                    "type": "string",
+                    "example": 4
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": 4000
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 267
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 14:45:53 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"10b-1C7sF1mFuyfyxvuFvFfV1ggcwR0\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CREATELOANAPPLICATIONResponse"
+                },
+                "example": {
+                  "status": 201,
+                  "Created": true,
+                  "data": {
+                    "id": 1,
+                    "user": "kiirubrian21@gmail.com",
+                    "loanType": "Mortage",
+                    "createdOn": "Mon, 29 Apr 2019 14:45:53 GMT",
+                    "status": "pending",
+                    "tenor": 4,
+                    "amount": 3000,
+                    "interest": 600,
+                    "repaid": false,
+                    "paymentInstallment": 900,
+                    "balance": 3600
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "summary": "GET LOAN APPLICATIONS",
+        "description": "Get all loan applications",
+        "operationId": "GetLoanApplications",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 252
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 14:50:41 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"fc-MEsuxCMBKXWmK0G0WNAzEw2xbII\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GETLOANAPPLICATIONSResponse"
+                },
+                "example": {
+                  "status": 200,
+                  "data": [
+                    {
+                      "id": 1,
+                      "user": "kiirubrian21@gmail.com",
+                      "loanType": "Mortage",
+                      "createdOn": "Mon, 29 Apr 2019 14:45:53 GMT",
+                      "status": "pending",
+                      "tenor": 4,
+                      "amount": 3000,
+                      "interest": 600,
+                      "repaid": false,
+                      "paymentInstallment": 900,
+                      "balance": 3600
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/loans/1": {
+      "get": {
+        "summary": "GET SPECIFIC LOAN APPLICATION",
+        "description": "Get Loan application by ID passing it as a parameter in the URL",
+        "operationId": "GetSpecificLoanApplication",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 250
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 14:57:29 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"fa-tJjfMPMMwcgzydCbx7OWVy+auso\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GETSPECIFICLOANAPPLICATIONResponse"
+                },
+                "example": {
+                  "status": 200,
+                  "data": {
+                    "id": 1,
+                    "user": "kiirubrian21@gmail.com",
+                    "loanType": "Mortage",
+                    "createdOn": "Mon, 29 Apr 2019 14:45:53 GMT",
+                    "status": "pending",
+                    "tenor": 4,
+                    "amount": 3000,
+                    "interest": 600,
+                    "repaid": false,
+                    "paymentInstallment": 900,
+                    "balance": 3600
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "summary": "VERIFY A LOAN",
+        "description": "verifys a loan, put the verify status into the request body.\nNB: Request body must be an encoded URL search param forexample: new URLSearchParam({ 'status': 'verified' }).",
+        "operationId": "VerifyALoan",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "status"
+                ],
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "approved"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 35
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 15:00:30 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"23-fgbi4liwnRtGG9ovjujukWHSEp4\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VERIFYALOANResponse"
+                },
+                "example": {
+                  "status": 200,
+                  "message": "approved"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/kiirubrian21@gmail.com/verify": {
+      "patch": {
+        "summary": "VERIFY A USER",
+        "description": "Verify user by email ID, pasing it as a parameter in the URL",
+        "operationId": "VerifyAUser",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "status"
+                ],
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "verified"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "202": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 35
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 14:59:08 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"23-26DNEuP3A0tasteSNaEdPm2b/Is\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VERIFYAUSERResponse"
+                },
+                "example": {
+                  "status": 202,
+                  "message": "verified"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/loans/1/repayments": {
+      "post": {
+        "summary": "POST LOAN REPAYMENT",
+        "description": "Post loan repayment by passing loan ID as a URL param.\nNB. ADMIN can use same endpoint to make a loan repayment transaction in favor of a user,  by passing in email ID of a user in the URL as param",
+        "operationId": "PostLoanRepayment",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZWxlbWFuaGlsbGFyeUBnbWFpbC5jb20iLCJpYXQiOjE1NTY1NDMwNTAsImV4cCI6MTU1NjYyOTQ1MH0.Yln5s4ERZLm0H1SKsvwqDeDHRKP-LmF1SSo3isxkBik"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "required": [
+                  "amount"
+                ],
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "string",
+                    "example": 1200
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 203
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 15:04:10 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"cb-ULixrawbCz1H8QOmI43E7Efm50I\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/POSTLOANREPAYMENTResponse"
+                },
+                "example": {
+                  "status": 201,
+                  "Created": true,
+                  "data": {
+                    "id": 1,
+                    "loanType": "Mortage",
+                    "loanId": 1,
+                    "createdOn": "Mon, 29 Apr 2019 15:04:10 GMT",
+                    "amount": 3000,
+                    "monthlyInstallment": 900,
+                    "paidAmount": 900,
+                    "balance": 2700
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "summary": "GET A SPECIFIC LOAN REPAYMENT DATA",
+        "description": "Get Loan Repayment data by Id",
+        "operationId": "GetASpecificLoanRepaymentData",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZWxlbWFuaGlsbGFyeUBnbWFpbC5jb20iLCJpYXQiOjE1NTY1NDkwMjMsImV4cCI6MTU1NjYzNTQyM30.UNlqRWMfepudZmrS43F_MYmdXrMFbVJrHrP8Sw4M-eM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 186
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 15:09:15 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"ba-CedMJIk4fZRu7OJjbbkprgTP94Q\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GETASPECIFICLOANREPAYMENTDATAResponse"
+                },
+                "example": {
+                  "status": 200,
+                  "data": {
+                    "id": 1,
+                    "loanType": "Mortage",
+                    "loanId": 1,
+                    "createdOn": "Mon, 29 Apr 2019 15:04:10 GMT",
+                    "amount": 3000,
+                    "monthlyInstallment": 900,
+                    "paidAmount": 900,
+                    "balance": 2700
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "GET ALL USERS",
+        "description": "Retrieves all users stored in the database",
+        "operationId": "GetAllUsers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {
+              "access-control-allow-origin": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "*"
+                  }
+                }
+              },
+              "connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "content-length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": 308
+                  }
+                }
+              },
+              "content-type": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "application/json; charset=utf-8"
+                  }
+                }
+              },
+              "date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Mon, 29 Apr 2019 15:17:04 GMT"
+                  }
+                }
+              },
+              "etag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "W/\"134-6KfKEjFHJ6g5BaSwgfT1OMZ9Tqs\""
+                  }
+                }
+              },
+              "x-powered-by": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "example": "Express"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GETALLUSERSResponse"
+                },
+                "example": {
+                  "status": 200,
+                  "data": [
+                    {
+                      "id": 1,
+                      "firstname": "Brian",
+                      "lastname": "kiiru",
+                      "email": "kiirubrian@gmail.com",
+                      "homeaddress": "Mama Ngina Street Hse No.24",
+                      "workaddress": "Embu, kenya",
+                      "password": "Qazwsxedcrfv1234",
+                      "status": "verified",
+                      "isAdmin": false,
+                      "createdOn": "Mon, 29 Apr 2019 14:38:12 GMT"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "USERSIGNUPResponse": {
+        "title": "USERSIGNUPResponse",
+        "required": [
+          "status",
+          "Created",
+          "token",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Created": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Data"
+          }
+        },
+        "example": {
+          "status": 201,
+          "Created": true,
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZWxlbWFuaGlsbGFyeUBnbWFpbC5jb20iLCJpYXQiOjE1NTY1NDg2OTIsImV4cCI6MTU1NjYzNTA5Mn0.RcquezmL3vOeFAHH1LT_V6X3sX5wiE6Q4vnRBCBV-9I",
+          "data": {
+            "id": 1,
+            "firstname": "Brian",
+            "lastname": "kiiru",
+            "email": "kiirubrian21@gmail.com",
+            "homeaddress": "Mama Ngina Street Hse No.24",
+            "workaddress": "Embu, kenya",
+            "password": "Qazwsxedcrfv1234",
+            "status": "unverified",
+            "isAdmin": false,
+            "createdOn": "Mon, 29 Apr 2019 14:38:12 GMT"
+          }
+        }
+      },
+      "Data": {
+        "title": "Data",
+        "required": [
+          "id",
+          "firstname",
+          "lastname",
+          "email",
+          "homeaddress",
+          "workaddress",
+          "password",
+          "status",
+          "isAdmin",
+          "createdOn"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "homeaddress": {
+            "type": "string"
+          },
+          "workaddress": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "isAdmin": {
+            "type": "boolean"
+          },
+          "createdOn": {
+            "type": "string"
+          }
+        }
+      },
+      "USERSIGINResponse": {
+        "title": "USERSIGINResponse",
+        "required": [
+          "status",
+          "Success",
+          "token",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Success": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Data"
+          }
+        },
+        "example": {
+          "status": 200,
+          "Success": true,
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZWxlbWFuaGlsbGFyeUBnbWFpbC5jb20iLCJpYXQiOjE1NTY1NDkwMjMsImV4cCI6MTU1NjYzNTQyM30.UNlqRWMfepudZmrS43F_MYmdXrMFbVJrHrP8Sw4M-eM",
+          "data": {
+            "id": 1,
+            "firstname": "Brian",
+            "lastname": "kiiru",
+            "email": "kiirubrian21@gmail.com",
+            "homeaddress": "Mama Ngina Street Hse No.24",
+            "workaddress": "Embu, kenya",
+            "password": "Qazwsxedcrfv1234",
+            "status": "unverified",
+            "isAdmin": false,
+            "createdOn": "Mon, 29 Apr 2019 14:38:12 GMT"
+          }
+        }
+      },
+      "CREATELOANAPPLICATIONResponse": {
+        "title": "CREATELOANAPPLICATIONResponse",
+        "required": [
+          "status",
+          "Created",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Created": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Data2"
+          }
+        },
+        "example": {
+          "status": 201,
+          "Created": true,
+          "data": {
+            "id": 1,
+            "user": "kiirubrian21@gmail.com",
+            "loanType": "mortage",
+            "createdOn": "Mon, 29 Apr 2019 14:45:53 GMT",
+            "status": "pending",
+            "tenor": 4,
+            "amount": 3000,
+            "interest": 600,
+            "repaid": false,
+            "paymentInstallment": 900,
+            "balance": 3600
+          }
+        }
+      },
+      "Data2": {
+        "title": "Data2",
+        "required": [
+          "id",
+          "user",
+          "loanType",
+          "createdOn",
+          "status",
+          "tenor",
+          "amount",
+          "interest",
+          "repaid",
+          "paymentInstallment",
+          "balance"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "user": {
+            "type": "string"
+          },
+          "loanType": {
+            "type": "string"
+          },
+          "createdOn": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "tenor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "interest": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "repaid": {
+            "type": "boolean"
+          },
+          "paymentInstallment": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "balance": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "GETLOANAPPLICATIONSResponse": {
+        "title": "GETLOANAPPLICATIONSResponse",
+        "required": [
+          "status",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Data2"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "status": 200,
+          "data": [
+            {
+              "id": 1,
+              "user": "kiirubrian@gmail.com",
+              "loanType": "Mortage",
+              "createdOn": "Mon, 29 Apr 2019 14:45:53 GMT",
+              "status": "pending",
+              "tenor": 4,
+              "amount": 3000,
+              "interest": 600,
+              "repaid": false,
+              "paymentInstallment": 900,
+              "balance": 3600
+            }
+          ]
+        }
+      },
+      "GETSPECIFICLOANAPPLICATIONResponse": {
+        "title": "GETSPECIFICLOANAPPLICATIONResponse",
+        "required": [
+          "status",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Data2"
+          }
+        },
+        "example": {
+          "status": 200,
+          "data": {
+            "id": 1,
+            "user": "kiirubrian21@gmail.com",
+            "loanType": "Mortage",
+            "createdOn": "Mon, 29 Apr 2019 14:45:53 GMT",
+            "status": "pending",
+            "tenor": 4,
+            "amount": 3000,
+            "interest": 600,
+            "repaid": false,
+            "paymentInstallment": 900,
+            "balance": 3600
+          }
+        }
+      },
+      "VERIFYAUSERResponse": {
+        "title": "VERIFYAUSERResponse",
+        "required": [
+          "status",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "status": 202,
+          "message": "verified"
+        }
+      },
+      "VERIFYALOANResponse": {
+        "title": "VERIFYALOANResponse",
+        "required": [
+          "status",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "status": 200,
+          "message": "approved"
+        }
+      },
+      "POSTLOANREPAYMENTResponse": {
+        "title": "POSTLOANREPAYMENTResponse",
+        "required": [
+          "status",
+          "Created",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Created": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Data5"
+          }
+        },
+        "example": {
+          "status": 201,
+          "Created": true,
+          "data": {
+            "id": 1,
+            "loanType": "Mortage",
+            "loanId": 1,
+            "createdOn": "Mon, 29 Apr 2019 15:04:10 GMT",
+            "amount": 3000,
+            "monthlyInstallment": 900,
+            "paidAmount": 900,
+            "balance": 2700
+          }
+        }
+      },
+      "Data5": {
+        "title": "Data5",
+        "required": [
+          "id",
+          "loanType",
+          "loanId",
+          "createdOn",
+          "amount",
+          "monthlyInstallment",
+          "paidAmount",
+          "balance"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "loanType": {
+            "type": "string"
+          },
+          "loanId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdOn": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monthlyInstallment": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paidAmount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "balance": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "GETASPECIFICLOANREPAYMENTDATAResponse": {
+        "title": "GETASPECIFICLOANREPAYMENTDATAResponse",
+        "required": [
+          "status",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Data5"
+          }
+        },
+        "example": {
+          "status": 200,
+          "data": {
+            "id": 1,
+            "loanType": "Mortage",
+            "loanId": 1,
+            "createdOn": "Mon, 29 Apr 2019 15:04:10 GMT",
+            "amount": 3000,
+            "monthlyInstallment": 900,
+            "paidAmount": 900,
+            "balance": 2700
+          }
+        }
+      },
+      "GETLOANSAPPROVEDANDREPAIDResponse": {
+        "title": "GETLOANSAPPROVEDANDREPAIDResponse",
+        "required": [
+          "status",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Data2"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "status": 200,
+          "data": [
+            {
+              "id": 1,
+              "user": "kiirubrian21@gmail.com",
+              "loanType": "Mortage",
+              "createdOn": "Mon, 29 Apr 2019 14:45:53 GMT",
+              "status": "approved",
+              "tenor": 4,
+              "amount": 3000,
+              "interest": 600,
+              "repaid": true,
+              "paymentInstallment": 900,
+              "balance": 0
+            }
+          ]
+        }
+      },
+      "GETLOANSAPPROVEDANDNOTREPAIDResponse": {
+        "title": "GETLOANSAPPROVEDANDNOTREPAIDResponse",
+        "required": [
+          "status",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Data8"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "status": 200,
+          "data": [
+            {
+              "id": 1,
+              "user": "kiirubrian21@gmail.com",
+              "loanType": "Mortage",
+              "createdOn": "Mon, 29 Apr 2019 14:45:53 GMT",
+              "status": "approved",
+              "tenor": 4,
+              "amount": 3000,
+              "interest": 600,
+              "repaid": false,
+              "paymentInstallment": 900
+            }
+          ]
+        }
+      },
+      "Data8": {
+        "title": "Data8",
+        "required": [
+          "id",
+          "user",
+          "loanType",
+          "createdOn",
+          "status",
+          "tenor",
+          "amount",
+          "interest",
+          "repaid",
+          "paymentInstallment"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "user": {
+            "type": "string",
+            "example": "kiirubrian21@gmail.com"
+          },
+          "loanType": {
+            "type": "string",
+            "example": "Mortage"
+          },
+          "createdOn": {
+            "type": "string",
+            "example": "Mon, 29 Apr 2019 14:45:53 GMT"
+          },
+          "status": {
+            "type": "string",
+            "example": "approved"
+          },
+          "tenor": {
+            "type": "integer",
+            "format": "int32",
+            "example": 4
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32",
+            "example": 3000
+          },
+          "interest": {
+            "type": "integer",
+            "format": "int32",
+            "example": 600
+          },
+          "repaid": {
+            "type": "boolean",
+            "example": false
+          },
+          "paymentInstallment": {
+            "type": "integer",
+            "format": "int32",
+            "example": 900
+          }
+        }
+      },
+      "GETALLUSERSResponse": {
+        "title": "GETALLUSERSResponse",
+        "required": [
+          "status",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Data"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "status": 200,
+          "data": [
+            {
+              "id": 1,
+              "firstname": "Brian",
+              "lastname": "kiiru",
+              "email": "kiirubrian21@gmail.com",
+              "homeaddress": "Mama Ngina Street Hse No.24",
+              "workaddress": "Embu, Kenya",
+              "password": "Qazwsxedcrfv1234",
+              "status": "verified",
+              "isAdmin": false,
+              "createdOn": "Mon, 29 Apr 2019 14:38:12 GMT"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "tags": []
+}

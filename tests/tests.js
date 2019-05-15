@@ -1,6 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../src/index';
+import app from '../app';
 
 chai.use(chaiHttp);
 const { expect } = chai;
@@ -43,11 +43,12 @@ describe('GET /, /404, /api/v1', () => {
 describe('routes: /auth', () => {
   context('POST /auth/signup', () => {
     const userData = {
-      firstName: 'Robert ',
-      lastName: 'Ndirangu Ndegwa',
+      firstName: 'Robert',
+      lastName: 'Ndirangu',
       address: 'HSe Number 25 Mutha Street, Embu, Kenya',
       email: 'robakadi@gmail.com',
-      password: 'secret',
+      pin:'54321'
+      password: 'QAZwsxedcrfv254',
     };
 
     it('should create a new user', (done) => {
@@ -63,7 +64,7 @@ describe('routes: /auth', () => {
         });
     });
 
-    specify.skip('error for already existing user with email', (done) => {
+    specify.skip('error for already existing user or email', (done) => {
       chai
         .request(app)
         .post('/api/v1/auth/signup')
@@ -105,6 +106,22 @@ describe('routes: /auth', () => {
           done(err);
         });
     });
+    
+  /* specify('error when user signs up with empty address', (done) => {
+      userData.address = '';
+      chai
+        .request(app)
+        .post('/api/v1/auth/signup')
+        .send(userData)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body.status).to.be.equal(400);
+          expect(res.body).to.have.property('error');
+          console.log(res.body.error);
+          expect(res.body.error).to.equal('You need to include a valid address');
+          done(err);
+        });
+    });*/
 
     specify('error when user signs up with empty address', (done) => {
       userData.address = '';
@@ -116,8 +133,6 @@ describe('routes: /auth', () => {
           expect(res).to.have.status(400);
           expect(res.body.status).to.be.equal(400);
           expect(res.body).to.have.property('error');
-          // console.log(res.body.error);
-          // expect(res.body.error).to.equal('You need to include a valid address');
           done(err);
         });
     });
@@ -157,8 +172,8 @@ describe('routes: /auth', () => {
         .request(app)
         .post('/api/v1/auth/signin')
         .send({
-          email: 'meetdesmond.edem@gmail.com',
-          password: 'admin',
+          email: 'Kiirubrian21@gmail.com',
+          password: 'Qazwsxedcrfv1234',
         })
         .end((err, res) => {
           expect(res).to.have.status(200);
@@ -185,7 +200,7 @@ describe('routes: /auth', () => {
       chai
         .request(app)
         .post('/api/v1/auth/signin')
-        .send({ email: 'meetdesmond.edem@gmail.com', password: '' })
+        .send({ email: 'robakadi@gmail.com', password: '' })
         .end((err, res) => {
           expect(res).to.have.status(400);
           expect(res.body.status).to.be.equal(400);
