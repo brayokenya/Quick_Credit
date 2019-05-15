@@ -4,7 +4,10 @@
   "description": "<a href=\"https://codeclimate.com/github/brayokenya/Quick_Credit/maintainability\"><img src=\"https://api.codeclimate.com/v1/badges/15f31ec3548a640ffcad/maintainability\" /></a> <a href=\"https://codeclimate.com/github/brayokenya/Quick_Credit/test_coverage\"><img src=\"https://api.codeclimate.com/v1/badges/15f31ec3548a640ffcad/test_coverage\" /></a> [![Build Status](https://travis-ci.org/brayokenya/Quick_Credit.svg?branch=master&service=github)](https://travis-ci.org/brayokenya/Quick_Credit)",
   "main": "src/app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon --exec babel-node src/app.js",
+    "build": "babel src --out-dir dist",
+    "serve": "node dist/app.js",
+    "start:dev": "nodemon --exec babel-node app.js",
     "test": "nyc --reporter=html mocha --require @babel/register --timeout 120000 --require @babel/polyfill ./tests --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test",
@@ -14,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/brayokenya/Quick_Credit.git"
   },
-  "author": "",
+  "author": "brian",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/brayokenya/Quick_Credit/issues"
