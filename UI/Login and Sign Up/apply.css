@@ -48,7 +48,7 @@ input[type=number]:focus, input[type=text]:focus {
   margin: 5px 0 22px 0;
   display: inline-block;
   border: 1px solid black;
-  margin: 10px;
+  margin: 15px;
   border: 1px solid #4CAF50;
   border-radius: 5px;
   box-sizing: border-box;

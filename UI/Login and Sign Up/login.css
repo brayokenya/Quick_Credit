@@ -37,8 +37,9 @@
 }
 
 .button_link {
+  padding: 15px 60px;
+  width: 10%;
   background-color: green !important;
-  padding: 15px 40px;
 }
 
 .form-header {
