@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>QuickCredit</title>
-<link rel="stylesheet" href="./UI/Login and Sign Up/login.css"> </link>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>QuickCredit</title>
+    <link rel="stylesheet" href="./UI/Login and Sign Up/login.css" />
+  </head>
+  <body>
     <div class="form-header">
-      <img src="https://img.icons8.com/dusk/64/000000/cash-in-hand.png" alt="QuickCredit Logo">
+      <img
+        src="https://img.icons8.com/dusk/64/000000/cash-in-hand.png"
+        alt="QuickCredit Logo"
+      />
       <h1 id="title">QUICK CREDIT COMPANY LIMITED.</h1>
-        <br>
-    </br>
-        <p id="description">
-          We offer good interest rates to customers who borrow often and pay on time...
+
+      <p id="description">
+        We offer good interest rates to customers who borrow often and pay on
+        time...
+      </p>
+    </div>
+
+    <br />
+
+    <form id="Login">
+      <h2>Welcome Back!</h2>
+
+      <div>
+        <p>Input your Username/ Email to Login In:</p>
+        <p>
+          <input type="text" placeholder="Email" id="email" />
+        </p>
+        <p>
+          <input type="text" placeholder="Password" id="Password" />
         </p>
       </div>
 
-      <br>
-    
-  <form id = "Login" >
-        <h2>Welcome Back!</h2>
-       
-      <div>
-       <p>Input your Username/ Email to Login In: 
-         <p> 
-        <input type="text" placeholder="Username/ Email" id="Username">
-    </p> 
-    <p>
-        <input type="text" placeholder="Password" id="Password"></p>
-       </div>
+      <form>
+        <!----input type="button" class="loginbtn" value="Login" onclick= "validate()"/>-->
+        <a class="button_link" href="./apply.html">Login</a> 
+          
+          <a class="button_link" href="./adminlogin.html">Admin</a>
+      </form>
+    </form>
 
-       <script src="login.js"></script>
-
-<form>
-  <input type="button" class="loginbtn" value = "Login"
-oneclick="window.location.href= 'https://github.com/brayokenya/Quick_Credit/gh-pages/apply.html'"/>
-
-<a class="button_link" href ="./adminlogin.html">Admin</a>
-
-</form>
-</form>
-
-<form id = 'link'>
-<h4>Don't have an Account with us yet? <a href = "index.html">Click here!</a></h4>
-</form>
-</form>
+    <form id="link">
+      <h4>
+        Don't have an Account with us yet? <a href="index.html">Click here!</a>
+      </h4>
+    </form>
+    <script src="login.js"></script>
+  </body>
 </html>
