@@ -3,11 +3,11 @@
 /* Full-width input fields */
   /* Full-width input fields */
 input[type=text], input[type=password] {
-  padding: 20px 120px;
+  padding: 15px 120px;
   margin: 5px 0 22px 0;
   display: inline-block;
   border: 1px solid black;
-  margin: 10px;
+  margin: 0px;
   border: 1px solid #4CAF50;
   border-radius: 5px;
   box-sizing: border-box;
@@ -50,6 +50,7 @@ width: 500%;
 .form-header {
   padding: 20px 40px;
   margin: auto;
+  width: 96%;
   background: green;
   background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
 }  
@@ -57,7 +58,27 @@ width: 500%;
 margin: auto;
 width: 10%;
 }
-
+.apply_form {
+padding:30px 40px;
+margin: auto;
+width: 100%;
+}
+#birthday {
+margin: auto;
+width: 5%;
+}
+#birthmonth {
+  margin: auto;
+  width: 5%;
+}
+#birthyear {
+  margin:auto;
+  width: 5%;
+}
+#country {
+  margin: auto;
+  width: 5%;
+}
 
 input[type=number]:focus, input[type=text]:focus {
   background-color: #ddd;
@@ -68,4 +89,7 @@ input[type=number]:focus, input[type=text]:focus {
   padding: 14px 20px;
   background-color: green;
   }
-
+.button_link {
+  padding: 14px 20px;
+  background-color: green;
+}
