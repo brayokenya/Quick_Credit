@@ -1,4 +1,4 @@
-import userDB from '../models/mock-users';
+const userDB = require ('../models/mock-users');
 
 /**
  * @class UserController
@@ -64,4 +64,4 @@ class UserController {
   }
 }
 
-export default UserController;
+module.exports = UserController

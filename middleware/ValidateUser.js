@@ -1,5 +1,5 @@
-import HelperUtils from '../utils/HelperUtils';
-import userDB from '../models/mock-users';
+const HelperUtils = require ('../utils/HelperUtils');
+const userDB = require ('../models/mock-users');
 
 /**
  * @class ValidateUser
@@ -81,4 +81,4 @@ class ValidateUser {
   }
 }
 
-export default ValidateUser;
+module.exports =  ValidateUser

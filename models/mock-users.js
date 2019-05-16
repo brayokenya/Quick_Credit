@@ -47,4 +47,6 @@ const userDB = [
   
 ];
 
-export default userDB;
+
+module.exports = userDB
+

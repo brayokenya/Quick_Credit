@@ -7,4 +7,5 @@ class HelperUtils {
   }
 }
 
-export default HelperUtils;
+
+module.exports = HelperUtils

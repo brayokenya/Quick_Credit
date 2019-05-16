@@ -1,7 +1,8 @@
-import express from 'express';
-import ValidateUser from '../middleware/ValidateUser';
-import AuthenticateUser from '../middleware/AuthenticateUser';
-import UserController from '../controllers/UserController';
+const express = require ('express');
+const ValidateUser = require ('../middleware/ValidateUser');
+const AuthenticateUser = require ('../middleware/AuthenticateUser');
+const UserController = require ('../controllers/UserController');
+const routes = require ('../routes/routes')
 
 const router = express.Router();
 
@@ -25,4 +26,4 @@ router.post(
   UserController.loginUser,
 );
 
-export default router;
+module.exports = router;

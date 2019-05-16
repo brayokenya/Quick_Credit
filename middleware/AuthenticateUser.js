@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-import jwt from 'jsonwebtoken';
+const dotenv = require ('dotenv');
+const jwt = require ('jsonwebtoken');
 
 dotenv.config();
 
@@ -54,4 +54,5 @@ class AuthenticateUser {
   }
 }
 
-export default AuthenticateUser;
+
+module.exports = AuthenticateUser
