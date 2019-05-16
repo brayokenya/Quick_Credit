@@ -12,6 +12,12 @@ input[type=number], input[type=text] {
   box-sizing: border-box;
   background: #f1f1f1;
 }
+form:nth-of-type(1) {
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  justify-content: center;
+}
 
 #title {
   /* 	text-align: center; */

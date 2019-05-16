@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/apply.css" />
   </head>
 
-  <body>
+  
     <div class="form-header">
       <img
         src="https://img.icons8.com/dusk/64/000000/cash-in-hand.png"
@@ -19,44 +19,41 @@
       </p>
     </div>
     <h2 id = "fheader">Fill the form below to Sign Up</h2>
-    <form>
-      <label for="fname"
-        >First Name :
-        <input id="fname" type="text" placeholder="First Name" id="first"
-      /></label>
+    <body>
+      <form>
+    <div class="form:nth-of-type(1) "></div>
+    <div>
+        <p>
+            First Name :
+          <input type="text" placeholder=" First Name " id="amount" />
+        </p>
+        <p>
+            Last Name : 
+          <input type="text" placeholder="Last Name " id="income" />
+        </p>
+        <p>
+            
+              Email Add:
+              <input type="text" placeholder="Email" id="email" />
+            </p>
+            <p>
+                Username :
+                <input type="text" placeholder="Username" id="user" />
+              </p>
+              <p>
+                  Passowrd :
+                  <input type="text" placeholder="Passowrd" id="pass1" />
+                </p>
+                <p>
+            Confirm Password :   
+                    <input type="text" placeholder="Confirm Password" id="pass2" />
+                  </p>
+    </div>
 
-      <label for="lname"
-        >Last Name :<input
-          id="lname"
-          type="text"
-          placeholder="Last Name"
-          id="last"
-      /></label>
+    <a class="button_link" href="./login.html">Sign Up</a>
 
-      <label for="nname"
-        >Nickname :<input id="nname" type="text" placeholder="nickname" id="nick"
-      /></label>
-
-      <label for="email"
-        >Email :<input id="email" type="text" placeholder="email" id="email"
-      /></label>
-
-      <label for="uname"
-        >Username :<input id="uname" type="text" placeholder="username" id="user"
-      /></label>
-
-      <label id="password"
-        >Passowrd :<input type="password" placeholder="password" id="pass1"
-      /></label>
-
-      <label
-        >Confirm Password :<input
-          type="password"
-          placeholder="verify password"
-          id="pass2"
-      /></label>
-    </form>
-    <form>
+  
+    
       <label>
         <input
           type="checkbox"
@@ -73,11 +70,6 @@
       </p>
 
       
-            
-
-      <div class="clearfix">
-          <a href ="login.html"><button> Sign Up</button></a> 
-      </div>
     </form>
 
     <script src="./js/apply.js"></script>

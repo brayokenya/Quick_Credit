@@ -16,6 +16,7 @@ input[type=text], input[type=password] {
 form:nth-of-type(1) {
   display: flex;
   flex-wrap: wrap;
+  display: grid;
   justify-content: center;
 }
 #title {
@@ -35,11 +36,6 @@ form:nth-of-type(1) {
 #fheader {
   margin: auto;
   width: 30%;
-}
-#apply {
-  margin: auto;
-    width: 40%;
-    
 }
 #sign {
 margin: auto;
@@ -63,21 +59,24 @@ padding:30px 40px;
 margin: auto;
 width: 100%;
 }
+.button_link {
+  padding: 15px 60px;
+  width: 20%;
+  margin: auto;
+  color:white;
+  background-color: green !important;
+}
 #birthday {
 margin: auto;
-width: 5%;
 }
 #birthmonth {
   margin: auto;
-  width: 5%;
 }
 #birthyear {
   margin:auto;
-  width: 5%;
 }
 #country {
   margin: auto;
-  width: 5%;
 }
 
 input[type=number]:focus, input[type=text]:focus {

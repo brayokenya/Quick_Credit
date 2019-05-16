@@ -38,8 +38,8 @@
 
 .button_link {
   padding: 15px 60px;
-  width: 10%;
-  color: white;
+  width: 30%;
+  color: rgb(243, 243, 243) !important;
   background-color: green !important;
 }
 
@@ -82,7 +82,7 @@ a:hover {
 }
 
 a:active {
-  color: yellow;
+  color: rgb(14, 14, 9);
   background-color: transparent;
   text-decoration: underline;
 }
