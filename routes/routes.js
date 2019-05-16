@@ -24,4 +24,5 @@ router.post(
   AuthenticateUser.generateToken,
   UserController.loginUser,
 );
+
 export default router;

@@ -29,7 +29,7 @@ class UserController {
       status: 'unverified',
     };
 
-    userDB.concat(userData);
+    userDB.push(userData);
     res.status(201).json({
       status: 201,
       data: {
