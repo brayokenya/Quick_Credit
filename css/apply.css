@@ -1,13 +1,16 @@
-* {box-sizing: border-box}
+* {
+  box-sizing: border-box;
+}
 
-  /* Full-width input fields */
-input[type=text], input[type=password] {
+/* Full-width input fields */
+input[type="text"],
+input[type="password"] {
   padding: 15px 120px;
   margin: 5px 0 22px 0;
   display: inline-block;
   border: 1px solid black;
   margin: 0px;
-  border: 1px solid #4CAF50;
+  border: 1px solid #4caf50;
   border-radius: 5px;
   box-sizing: border-box;
   background: #f1f1f1;
@@ -20,74 +23,75 @@ form:nth-of-type(1) {
   justify-content: center;
 }
 #title {
-    /* 	text-align: center; */
+  /* 	text-align: center; */
   color: white;
   margin: auto;
   width: 50%;
   font-size: 2rem;
-  text-shadow:4px 1px black;
-    }
+  text-shadow: 4px 1px black;
+}
 
 #description {
-  color:white;
+  color: white;
   margin: auto;
   width: 50%;
-  }
+}
 #fheader {
   margin: auto;
   width: 30%;
 }
 #sign {
-margin: auto;
-width: 500%;
-
+  margin: auto;
+  width: 500%;
 }
 .form-header {
   padding: 20px 40px;
   margin: auto;
   width: 96%;
   background: green;
-  background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
-}  
+  background: linear-gradient(50deg, green 0%, rebeccapurple 150%);
+}
 .clearfix {
-margin: auto;
-width: 10%;
-color: #4CAF50;
+  margin: auto;
+  width: 10%;
+  color: #4caf50;
 }
 .apply_form {
-padding:30px 40px;
-margin: auto;
-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  justify-content: center;
 }
 .button_link {
   padding: 15px 60px;
   width: 20%;
   margin: auto;
-  color:white;
+  color: white;
   background-color: green !important;
 }
 #birthday {
-margin: auto;
+  margin: auto;
 }
 #birthmonth {
   margin: auto;
 }
 #birthyear {
-  margin:auto;
+  margin: auto;
 }
 #country {
   margin: auto;
 }
 
-input[type=number]:focus, input[type=text]:focus {
+input[type="number"]:focus,
+input[type="text"]:focus {
   background-color: #ddd;
   outline: none;
-      }
+}
 /* Extra styles for the submit button */
 .signupbtn {
   padding: 14px 20px;
   background-color: green;
-  }
+}
 .button_link {
   padding: 14px 20px;
   background-color: green;
