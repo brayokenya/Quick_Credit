@@ -2,7 +2,6 @@ const express = require ('express');
 const ValidateUser = require ('../middleware/ValidateUser');
 const AuthenticateUser = require ('../middleware/AuthenticateUser');
 const UserController = require ('../controllers/UserController');
-const routes = require ('../routes/routes')
 
 const router = express.Router();
 
@@ -11,19 +10,20 @@ router.get('/', (req, res) => {
 });
 
 /**
- * POST /auth requests
+ * POST requests for sign up and sign in
  */
 router.post(
-  '/auth/signup',
+  '/signup',
   ValidateUser.validateProfileDetails,
   AuthenticateUser.generateToken,
   UserController.createUser,
 );
 router.post(
-  '/auth/signin',
+  '/signin',
   ValidateUser.validateLoginDetails,
   AuthenticateUser.generateToken,
   UserController.loginUser,
 );
+
 
 module.exports = router;

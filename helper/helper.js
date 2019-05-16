@@ -19,7 +19,7 @@ const genToken = (email) => {
 
 const loanTypesAmount = {
   'Hospital Emergency': 60000,
-  'Mortage': 3000,
+  'Mortage': 30000,
   'Education': 45000,
   'Investment': 60000,
   'Business Launch': 1000000,
