@@ -29,8 +29,8 @@ function create (data) {
  var anyuser = {
 
  },
- const token = jwt.sign ({anyuser}, "assddsjfhjh");
- anyuser = {
+ /*const token = jwt.sign ({anyuser}, "assddsjfhjh");
+ //anyuser = {
    status: "unverified",
    data : { token: token,
     id: this.users.lenght+1,
@@ -42,7 +42,7 @@ function create (data) {
   
   }
  };
-
+*/
 
 }
 
