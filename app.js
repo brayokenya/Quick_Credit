@@ -12,9 +12,9 @@ app.use('/api/v1/auth', signup);
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Welcome to QuickCredit' });
 });
-// app.all('*', (req, res) => {
-//   res.status(404).json({ error: 'Route is invalid' });
-// });
+//app.all('*', (req, res) => {
+ //res.status(404).json({ error: 'Route is invalid' });
+// });//
 
 app.listen(PORT, () => console.log(`Server running at port ${PORT}`));
 

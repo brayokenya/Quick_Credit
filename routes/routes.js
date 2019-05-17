@@ -25,7 +25,7 @@ router.post(
   UserController.loginUser,
 );
 
-router.post(
+router.patch(
          '/loans',
    ValidateUser.validateLoginDetails,
   AuthenticateUser.generateToken,

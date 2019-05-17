@@ -1,8 +1,9 @@
-/* eslint-disable no-restricted-syntax */
-const Joi = require('@hapi/joi');
+
+const Joi = require('@hapi/joi'); //joi allows us me create blueprints oin JS objects to ensure processing of acurate data
 
 /*
  * @param {user} object
+ .trim used to remove whitespaces from both ends of a string
  */
 const validateSignUp = (user) => {
   const schema = Joi.object().keys({
