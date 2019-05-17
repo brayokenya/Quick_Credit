@@ -64,7 +64,7 @@ describe('routes: /auth', () => {
         });
     });
 
-    specify.skip('error for already existing user or email', (done) => {
+    describe('error for already existing user or email', (done) => {
       chai
         .request(app)
         .post('/api/v1/auth/signup')
