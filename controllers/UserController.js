@@ -10,8 +10,6 @@ class UserController {
   /**
    * @method createUser
    * @description Registers a user if details are valid
-   * @param {object} req - The Request Object
-   * @param {object} res - The Response Object
    * @returns {object} JSON API Response
    */
   static createUser(req, res) {
@@ -48,8 +46,6 @@ class UserController {
   /**
    * @method loginUser
    * @description Logs in a user if details are valid
-   * @param {object} req - The Request Object
-   * @param {object} res - The Response Object
    * @returns {object} JSON API Response
    */
   static loginUser(req, res) {
