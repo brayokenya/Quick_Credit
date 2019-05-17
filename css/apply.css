@@ -57,6 +57,7 @@ form:nth-of-type(1) {
   color: #4caf50;
 }
 .apply_form {
+  padding: 15px 1px;
   display: flex;
   flex-wrap: wrap;
   display: grid;

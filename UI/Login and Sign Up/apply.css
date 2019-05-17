@@ -1,4 +1,4 @@
-* {box-sizing: border-box}
+* {box-sizing: border-box;}
 
 /* Full-width input fields */
 input[type=number], input[type=text] {
@@ -27,12 +27,6 @@ width: 50%;
 font-size: 2rem;
 text-shadow:4px 1px black;
 }
-
-.form-header {
-  padding: 20px 40px;
-  background: green;
-  background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
-    } 
 
 input[type=number]:focus, input[type=text]:focus {
   background-color: #ddd;
@@ -68,7 +62,7 @@ input[type=number]:focus, input[type=text]:focus {
   text-shadow:4px 1px black;
     }
 .form-header {
-  padding: 20px 40px;
+  padding: 10px 300px;
   background: green;
   background: linear-gradient(50deg,green 0%,rebeccapurple 150%);
     } 
@@ -86,3 +80,4 @@ input[type=number]:focus, input[type=text]:focus {
   .body {
     background-image: url("Desktop/Andela/img/andela sign up.jpg");
   }
+  
