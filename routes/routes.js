@@ -18,7 +18,7 @@ router.post(
   AuthenticateUser.generateToken,
   UserController.createUser,
 );
-router.post(
+router.get(
   '/signin',
   ValidateUser.validateLoginDetails,
   AuthenticateUser.generateToken,

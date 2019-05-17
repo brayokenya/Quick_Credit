@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'Welcome to QuickCredit' });
 });
 app.use('/api/v1/auth/', signup);
+ res.status(200).json({ message: "Enter login details"});
 
 
 // app.all('*', (req, res) => {
