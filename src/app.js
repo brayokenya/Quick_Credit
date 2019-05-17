@@ -15,11 +15,6 @@ app.get('/', (req, res) => {
 app.use('/api/v1/auth/', signup);
  res.status(200).json({ message: "Enter login details"});
 
-
-// app.all('*', (req, res) => {
-//   res.status(404).json({ error: 'Route is invalid' });
-// });
-
 app.listen(PORT, () => console.log(`Server running at port ${PORT}`));
 
 module.exports  = app
