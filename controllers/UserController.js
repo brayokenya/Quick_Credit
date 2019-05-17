@@ -1,4 +1,5 @@
 const userDB = require ('../models/mock-users');
+const loanDb = require ('../models/loanDb')
 
 /**
  * @class UserController
@@ -15,14 +16,14 @@ class UserController {
    */
   static createUser(req, res) {
     const {
-      firstName, lastName, address, email, password,
+      firstname, lastname, address, email, password,
     } = req.body;
     const { token } = req;
     const id = userDB.length + 1;
     const userData = {
       id,
-      firstName,
-      lastName,
+      firstname,
+      lastname,
       address,
       email,
       password,
@@ -35,9 +36,10 @@ class UserController {
       data: {
         token,
         id,
-        firstName,
-        lastName,
+        firstname,
+        lastname,
         email,
+        password,
         message: 'registration successful',
       },
     });
@@ -58,10 +60,15 @@ class UserController {
       data: {
         token,
         email: req.body.email,
+        password: req.body.password,
         message: 'login successful!',
       },
     });
   }
 }
+
+    
+
+
 
 module.exports = UserController

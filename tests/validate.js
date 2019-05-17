@@ -14,9 +14,9 @@ const login = {
 
 const loan = {
   usermail: 'kiirubrian21@gmail.com',
-  loanType: 'Auto Loan',
-  tenor: 12,
-  amount: 3000,
+  loanType: 'Mortage',
+  tenor: 15,
+  amount: 47000,
 };
 
 const user = {

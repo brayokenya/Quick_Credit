@@ -17,8 +17,9 @@ class ValidateUser {
   static validateProfileDetails(req, res, next) {
     const validate = HelperUtils.validate();
     const {
-      firstName, lastName, address, email, password,
+      firstname, lastname, address, email, password,
     } = req.body;
+    
     let error = '';
 
     /* const userID = userDB.findIndex(user => user.email === email);
@@ -29,9 +30,9 @@ class ValidateUser {
       });
     } */
 
-    if (!firstName || !validate.name.test(firstName)) {
+    if (!firstname || !validate.name.test(firstname)) {
       error = 'You need to include a valid first name';
-    } else if (!lastName || !validate.name.test(lastName)) {
+    } else if (!lastname || !validate.name.test(lastname)) {
       error = 'You need to include a valid last name';
     } else if (!address) {
       error = 'You need to include a valid address';

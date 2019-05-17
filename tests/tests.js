@@ -107,22 +107,7 @@ describe('routes: /auth', () => {
         });
     });
 
-    /* specify('error when user signs up with empty address', (done) => {
-        userData.address = '';
-        chai
-          .request(app)
-          .post('/api/v1/auth/signup')
-          .send(userData)
-          .end((err, res) => {
-            expect(res).to.have.status(400);
-            expect(res.body.status).to.be.equal(400);
-            expect(res.body).to.have.property('error');
-            console.log(res.body.error);
-            expect(res.body.error).to.equal('You need to include a valid address');
-            done(err);
-          });
-      });*/
-
+    
     specify('error when user signs up with empty address', (done) => {
       userData.address = '';
       chai

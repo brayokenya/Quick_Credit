@@ -25,5 +25,12 @@ router.post(
   UserController.loginUser,
 );
 
+router.post(
+         '/loans',
+   ValidateUser.validateLoginDetails,
+  AuthenticateUser.generateToken,
+  UserController.loginUser,
+);
+ 
 
 module.exports = router;

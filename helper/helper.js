@@ -18,12 +18,12 @@ const genToken = (email) => {
 };
 
 const loanTypesAmount = {
-  'Hospital Emergency': 60000,
-  'Mortage': 30000,
-  'Education': 45000,
-  'Investment': 60000,
-  'Business Launch': 1000000,
-  'Home Improvement': 10000,
+  'Hospital Emergency': $40000,
+  'Mortage': $30000,
+  'Education': $45000,
+  'Investment': $60000,
+  'Business Launch': $1000000,
+  'Home Improvement': $10000,
 };
 Object.freeze(loanTypesAmount);
 
