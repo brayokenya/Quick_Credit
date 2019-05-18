@@ -16,20 +16,21 @@ router.post(
   '/signup',
   ValidateUser.validateProfileDetails,
   AuthenticateUser.generateToken,
-  //UserController.createUser,
+  UserController.createUser,
 );
 router.get(
   '/signin',
-  ValidateUser.validateLoginDetails,
+  ValidateUser.validateLoginDetails,//email
+  //password
   AuthenticateUser.generateToken,
-  //UserController.loginUser,
+  UserController.loginUser,
 );
 
 router.patch(
          '/loans',
    ValidateUser.validateLoginDetails,
   AuthenticateUser.generateToken,
-  //UserController.loginUser,
+  UserController.loginUser,
 );
  
 
