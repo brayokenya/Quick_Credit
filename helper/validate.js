@@ -1,32 +1,9 @@
-/* eslint-disable no-restricted-syntax */
-const Joi = require('@hapi/joi');
-const { loanTypesAmount } = require('./helper');
-const { newApplication } = require('../helper/util');
 
-let data;
+const Joi = require('@hapi/joi'); //joi allows us me create blueprints oin JS objects to ensure processing of acurate data
 
-/**
- *
- * @params {res} object
- * @params {args} array
- *
- * check if amount is greater than loan type maximum amount */
-let idL = 1;
-const loanTypeAndLoanAmountChecker = (res, ...args) => {
-  if (parseFloat(args[3]) > parseFloat(loanTypesAmount[args[1]])) {
-    res.status(403).json({ status: 403, error: `maximum loan amount for ${args[1]} is ${loanTypesAmount[args[1]]}` });
-  } else {
-    newApplication.insertLoan(idL, ...args);
-    idL += 1;
-    // eslint-disable-next-line prefer-destructuring
-    data = newApplication.head.data;
-    res.status(201).json({ status: 201, Created: 'true', data });
-  }
-};
-
-/**
- *
+/*
  * @param {user} object
+ .trim used to remove whitespaces from both ends of a string
  */
 const validateSignUp = (user) => {
   const schema = Joi.object().keys({
@@ -34,9 +11,8 @@ const validateSignUp = (user) => {
       .required(),
     lastname: Joi.string().regex(/^[A-Z]+$/).trim().uppercase(),
     email: Joi.string().email().trim().required(),
-    workAddress: Joi.string().trim().required(),
-    homeAddress: Joi.string().trim().required(),
-    pin: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).trim().min(6)
+    address: Joi.string().trim().required(),
+    password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).trim().min(6)
       .max(30)
       .required(),
   });
@@ -55,8 +31,7 @@ const validateLogin = (details) => {
   return Joi.validate(details, schema);
 };
 
-/**
- *
+/*
  * @param {user} object
  */
 const validateLoan = (loan) => {
@@ -69,8 +44,7 @@ const validateLoan = (loan) => {
   return Joi.validate(loan, schema);
 };
 
-/**
- *
+/*
  * @param {user} object
  */
 const loanApproveValidate = (user) => {
@@ -80,8 +54,7 @@ const loanApproveValidate = (user) => {
   return Joi.validate(user, schema);
 };
 
-/**
- *
+/*
  * @param {user} object
  */
 const amountValidate = (user) => {
@@ -92,9 +65,9 @@ const amountValidate = (user) => {
 };
 
 module.exports = {
-  validateLoan,
-  validateLogin,
   validateSignUp,
+  validateLogin,
+  validateLoan,
   loanApproveValidate,
   loanTypeAndLoanAmountChecker,
   amountValidate,

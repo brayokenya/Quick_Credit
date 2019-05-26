@@ -6,17 +6,19 @@ const userDB = [
     address: 'Mama Ngina Street HSe 24',
     email: 'Kiirubrian21@gmail.com',
     password: 'Qazwsxedcrfv1234',
-    status: 'unverified',
-    isAdmin: false,
+    pin:'12345',
+    status: 'verified',
+    isAdmin: true,
   },
   {
     id: 2,
-    firstName: 'Krystalle',
-    lastName: 'Averay',
+    firstName: 'Mwafrika',
+    lastName: 'Mufungizi',
     address: '2 Pepper Wood Pass',
-    email: 'kaveray1@mail.ru',
-    password: 'x6vG1vvLLY',
-    status: 'verified',
+    email: 'mwafrika21@gmail.ru',
+    pin:'10111',
+    password: 'Wset9321q',
+    status: 'unverified',
     isAdmin: false,
   },
   {
@@ -25,22 +27,16 @@ const userDB = [
     lastName: 'Ndirangu',
     address: 'HSe Number 25 Mutha Street, Embu, Kenya',
     email: 'robakadi@gmail.com',
+    pin:'56789',
     password: 'QAZwsxedcrfv254',
     status: 'verified',
     isAdmin: false,
     
   },
-  {
-    id: 4,
-    firstName: 'Caryl',
-    lastName: 'Bes',
-    address: '70009 Hayes Court',
-    email: 'cbes3@bloglines.com',
-    password: 'mp8hTHu8G',
-    status: 'verified',
-    isAdmin: true,
-  },
+ 
   
 ];
 
-export default userDB;
+
+module.exports = userDB
+

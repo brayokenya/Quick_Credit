@@ -2,7 +2,7 @@
 const chai = require('chai');
 
 const { expect } = chai;
-const sinon = require('sinon');
+const sinon = require('sinon');/* used to make requests and return responses */
 const jwt = require('jsonwebtoken');
 const { checkToken } = require('../middleware/auth');
 const { SECRET_KEY } = require('../helper/config');

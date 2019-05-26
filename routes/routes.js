@@ -1,7 +1,7 @@
-import express from 'express';
-import ValidateUser from '../middleware/ValidateUser';
-import AuthenticateUser from '../middleware/AuthenticateUser';
-import UserController from '../controllers/UserController';
+const express = require ('express');
+const ValidateUser = require ('../middleware/ValidateUser');
+const AuthenticateUser = require ('../middleware/AuthenticateUser');
+const UserController = require ('../controllers/UserController');
 
 const router = express.Router();
 
@@ -10,23 +10,27 @@ router.get('/', (req, res) => {
 });
 
 /**
- * POST /auth requests
+ * POST requests for sign up and sign in
  */
 router.post(
-  '/auth/signup',
-  // ValidateUser.validateLoginDetails,
+  '/signup',
   ValidateUser.validateProfileDetails,
   AuthenticateUser.generateToken,
-  UserController.createUser,
+  //UserController.createUser,
 );
 router.post(
-  '/auth/signin',
+  '/signin',
   ValidateUser.validateLoginDetails,
   AuthenticateUser.generateToken,
-  UserController.loginUser,
+  //UserController.loginUser,
 );
 
+router.patch(
+         '/loans',
+   ValidateUser.validateLoginDetails,
+  AuthenticateUser.generateToken,
+  //UserController.loginUser,
+);
+ 
 
-
-
-export default router;
+module.exports = router;

@@ -4,9 +4,11 @@
   "description": "<a href=\"https://codeclimate.com/github/brayokenya/Quick_Credit/maintainability\"><img src=\"https://api.codeclimate.com/v1/badges/15f31ec3548a640ffcad/maintainability\" /></a> <a href=\"https://codeclimate.com/github/brayokenya/Quick_Credit/test_coverage\"><img src=\"https://api.codeclimate.com/v1/badges/15f31ec3548a640ffcad/test_coverage\" /></a> [![Build Status](https://travis-ci.org/brayokenya/Quick_Credit.svg?branch=master&service=github)](https://travis-ci.org/brayokenya/Quick_Credit)",
   "main": "src/app.js",
   "scripts": {
-    "start": "babel-node src/app.js",
-    "start:dev": "nodemon --exec babel-node src/app.js",
-    "test": "nyc --reporter=html mocha --require @babel/register --timeout 120000 --require @babel/polyfill ./tests --exit",
+    "start": "nodemon --exec babel-node src/app.js",
+    "build": "babel src --out-dir dist",
+    "serve": "node dist/app.js",
+    "start:dev": "nodemon --exec babel-node app.js",
+    "test": "nyc --reporter=html mocha --require @babel/register  --require @babel/polyfill ./tests --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "showcoverage": "start ./coverage/index.html"
@@ -15,13 +17,19 @@
     "type": "git",
     "url": "git+https://github.com/brayokenya/Quick_Credit.git"
   },
-  "author": "",
+  "author": "brian",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/brayokenya/Quick_Credit/issues"
   },
   "homepage": "https://github.com/brayokenya/Quick_Credit#readme",
   "dependencies": {
+    "@babel/register": "^7.4.4",
+    "@babel/cli": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.4",
+    "babel-plugin-istanbul": "^5.1.4",
+    "babel-polyfill": "^6.26.0",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
@@ -42,18 +50,14 @@
     "node-fetch": "^2.3.0",
     "node-mocks-http": "^1.7.3",
     "nodemon": "^1.18.11",
-    "nyc": "^14.0.0",
+    "nyc": "^14.1.1",
     "request": "^2.88.0",
     "sinon": "^7.3.2",
     "supertest": "^4.0.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/node": "^7.2.2",
-    "@babel/polyfill": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/register": "^7.4.0",
+    "@babel/core": "^7.4.4",
+    "@babel/register": "^7.4.4",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "eslint": "^5.16.0",

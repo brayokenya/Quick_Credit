@@ -1,9 +1,7 @@
-import dotenv from 'dotenv';
-import jwt from 'jsonwebtoken';
+const dotenv = require ('dotenv');
+const jwt = require ('jsonwebtoken');
+const sk = require('../helper/config')
 
-dotenv.config();
-
-const secretKey = process.env.SECRET_KEY;
 
 /**
  * @class AuthenticateUser
@@ -19,10 +17,9 @@ class AuthenticateUser {
    * @returns {string} - The token string
    */
   static generateToken(req, res, next) {
-    jwt.sign(req.body, secretKey, { expiresIn: '5 minutes' }, (err, token) => {
-      req.token = `Bearer ${token}`;
+    const token = jwt.sign({user: req.body.email}, sk.SECRET_KEY, { expiresIn: '24h' });
+      req.token = ` ${token}`;
       return next();
-    });
   }
 
   /**
@@ -54,4 +51,5 @@ class AuthenticateUser {
   }
 }
 
-export default AuthenticateUser;
+
+module.exports = AuthenticateUser
