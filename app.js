@@ -8,6 +8,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/v1/auth', signup);
+app.use('/api/v1/auth', signin);
+app.use('/api/v1/', loans);
+app.use('/api/v1/', admin);
+
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Welcome to QuickCredit' });

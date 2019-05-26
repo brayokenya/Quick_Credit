@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
+require("babel-register");
 
 chai.use(chaiHttp);
 const { expect } = chai;
